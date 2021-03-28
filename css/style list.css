@@ -1,0 +1,34 @@
+.blue{
+    color: blue;
+}
+
+.red{
+    color: red;
+}
+
+.orange{
+    color: orange;
+}
+
+.purple{
+    color: purple;
+}
+
+.bgreen{
+  background-color: #31bc86;  
+}
+
+.byellow{
+    background-color: #ff0;
+}
+
+.bblue{
+    color: buttontext;
+}
+.a2 {
+    background-color: yellow;
+    display: table-cell;
+}
+#b1{
+    color: red;
+}
