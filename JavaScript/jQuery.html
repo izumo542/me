@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>紫外線監測</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <script>
+            var url = "http://opendata2.epa.gov.tw/UV/UV.json";
+//            var url ="../data/UV.json";
+//            var url = "../data/me.json";
+            $.getJSON(url, function (data) {
+                console.log(data);
+                
+                $("#showdata").empty(); // 清除 now loading 文字
+                
+                // 讀取每一個 data 陣列的物
+                $.each(data, function (index){
+                    // 找到 id 為 showdata 的元素
+                    var div = $("#showdata");
+                    // this 代表目前從陣列讀到的物件
+                    // 新增 h3 將 SiteName 設為內文 , 再將此 h3 添加到 div
+                    $("<h3></h3>").text(this.SiteName).appendTo(div);
+                    
+                    var uvi = parseFloat(this.UVI); // 文字 轉 浮點數
+                    // 找到 h2 將 uvi 設圍內文，再將此 h2 添加到 div
+                    $("<h2></h2>").text(uvi).appendTo(div);
+                });
+            });
+            
+            
+            
+        </script>
+    </head>
+    <body>
+        <h2>紫外線即時監測資料</h2>
+        <div id = "showdata">
+            Now Loading...
+            <h3>......</h3>
+        </div>
+    </body>
+</html>

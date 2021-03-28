@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>我的首頁</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="../css/style list.css" rel="stylesheet" type="text/css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rancho&effect=fire-animation" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <style>            
+
+            body {
+                position: relative; 
+            }
+            #section1 {padding-top:80px;height:400px;color: #fff; background-color: #1E88E5;}
+            #section2 {padding-top:50px;height:450px;color: #fff; background-color: #673ab7;}
+            #section3 {padding-top:50px;height:650px;color: #fff; background-color: #ff9800;}
+            #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+            #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+
+
+            .fr { 
+                float: right;
+            }
+            .cr {
+                clear: right;
+            }
+            
+        </style>  
+
+        <script src="我的首頁.js" type="text/javascript">
+                var url ="me.json";
+        </script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#">我的首頁</a>
+                </div>
+                <div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#section1">自我介紹</a></li>
+                            <li><a href="#section2">作品集</a></li>
+                            <li><a href="#section3">菜單傳送門</a></li>
+<!--                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#section41">Section 4-1</a></li>
+                                    <li><a href="#section42">Section 4-2</a></li>
+                                </ul>
+                            </li>-->
+                            <li class="fr"> <a href="login.html">登出</a> </li>
+
+                        </ul>
+                        <div>
+
+                            <audio controls class="fr" src="../music/2-23_AM.mp3" autoplay loop
+                                   autoplay controls loop controlsList = "nodownload">
+
+                            </audio>
+                            <img class = "fr" src="../images/001.jpg" height="50" width="50" alt="Dejavu"/>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>  
+        
+        
+        <div id="section1" class="container-fluid">
+            
+            <h1>自我介紹</h1>
+            
+<!--            <h2 id ="name"></h2>        
+            <h3 id ="intro"></h3>       
+            <h4><ul id="skills"></ul></h4>   -->
+            
+            <h2> Yao Bao Hung</h2>
+            <h3> 目前使用的技能 </h3>
+            <h4> 
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>jQuery</li>
+                    <li>Vue 購物車</li>
+                </ul>
+            </h4>
+
+
+        </div>
+        
+        <div id="section2" class="container-fluid">
+            <h1>作品集</h1>
+            <ul>
+                <li> <h2> <a href="BMI.html"  target="_blank">BMI計算  </h2> </li> 
+                <li> <h2> <a href="login.html"  target="_blank">log_in </h2></li> 
+                <li> <h2> <a href="shop.html" target="_blank">購物車 </h2></li>
+                <li> <h2> <a href="jQuery.html" target="_blank">紫外線監測 </h2></li>
+
+        </div>
+        <div id="section3" class="container-fluid">
+            <h1>菜單傳送門</h1>            
+
+            <div class="container">
+                <h2>餐點</h2>
+                <div id="member" class="carousel slide" data-ride="carousel" >
+                    <ol class="carousel-indicators">
+                        <li data-target="#member" data-slide-to="0" class="active"></li>
+                        <li data-target="#member" data-slide-to="1"></li>
+                        <li data-target="#member" data-slide-to="2"></li>                    
+                    </ol>
+                    <!-- Wrapper for slides 輪播 投影片-->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <a href ="https://www.0800076666.com.tw/Menu/MenuPizza" target="_blank">
+                                <img src="../images/拿坡里.jpg" 
+                                     style="height:100%; margin: 0 auto;">
+                            </a>
+                            <div class="carousel-caption">
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <a href ="https://www.kfcclub.com.tw/menu/hot-meal/hot-menu" target="_blank">
+                                <img src="../images/KFC.jpg"
+                                     style="height:100%; margin: 0 auto;">
+                            </a>
+                            <div class="carousel-caption">                          
+                            </div>
+                        </div> 
+
+                        <div class="item">
+                            <a href ="https://www.burgerking.com.tw/coupon" target="_blank">
+                                <img src="../images/漢堡王.jpg" 
+                                     style="height:100%; margin: 0 auto;">
+                            </a>
+                            <div class="carousel-caption">
+                            </div>
+                        </div> 
+
+                    </div>
+
+                    <!-- Left and right controls 兩側左右箭頭 切換投影片-->
+                    <a class="left carousel-control" href="#member" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#member" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+<!--        <div id="section41" class="container-fluid">
+            <h1>Section 4 Submenu 1</h1>
+            <p>Click on the different Section links in the navbar to see the smooth scrolling effect.</p>
+        </div>
+        <div id="section42" class="container-fluid">
+            <h1>Section 4 Submenu 2</h1>
+            <p>Click on the different Section links in the navbar to see the smooth scrolling effect.</p>
+        </div>-->
+
+        <script>
+            /*
+             $(document).ready( 匿名函式 )    # 網頁內容完全載入後 執行 匿名函式
+             $('元素').scrollspy( JSON物件 )  # 捲動資訊以 JSON 物件 傳遞
+             $('#元素id 所有子元素').on('click', 匿名函式 ) # 設定元素被 滑鼠點選 要執行的函式
+             */
+            $(document).ready(function () {
+                // Add scrollspy to <body>
+                $('body').scrollspy({target: ".navbar", offset: 50});
+
+                // Add smooth scrolling on all links inside the navbar
+                $("#myNavbar a").on('click', function (event) {
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function () {
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    }  // End if
+                });
+            });
+        </script>
+
+    </body>
+</html>

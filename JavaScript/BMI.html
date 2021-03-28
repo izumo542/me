@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>BMI 計算機</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/style list.css" rel="stylesheet" type="text/css"/>
+        <style>
+            
+            td {text-align:center}
+            
+            .type{
+                border-width: 200px 400px;
+                padding: 40px;
+                width: 250px;
+                height: 100px;
+                /*vertical-align: middle;*/
+                /*display: table-cell;*/
+            }
+            
+            .db{  
+                border-bottom-style: double;
+                width: 800px;
+                }
+                
+            .md{
+                padding: 0px 0px 0px 200px;
+                }
+                
+            .md2{
+                padding: 0px 0px 0px 270px;
+                }   
+                
+            .md3{
+                padding: 0px 0px 0px 335px;
+                }    
+                
+             .md4{
+/*                padding: 0px 0px 0px 280px;*/
+                margin: 0px 0px 0px 55px;
+                width: 700px;
+                height: 300px;
+                
+                }  
+                
+            .dt{
+                border-bottom-style: dotted;
+                /*padding: 0px 0px 0px 400px;*/
+                margin: 0px 0px 0px 45px;
+                width: 700px;
+                border-width: 2px;     
+                }
+                
+            
+            .fr {
+                float: right;
+            }          
+                  
+            .check_err{
+                color: red;
+            }
+            
+            .shake_err {
+                animation: shake 0.5s;
+                animation-iteration-count: 1; 
+            }
+            
+            @keyframes shake {
+                0% { transform: translate(1px, 1px) rotate(0deg); }
+                10% { transform: translate(-1px, -2px) rotate(-1deg); }
+                20% { transform: translate(-3px, 0px) rotate(1deg); }
+                30% { transform: translate(3px, 2px) rotate(0deg); }
+                40% { transform: translate(1px, -1px) rotate(1deg); }
+                50% { transform: translate(-1px, 2px) rotate(-1deg); }
+                60% { transform: translate(-3px, 1px) rotate(0deg); }
+                70% { transform: translate(3px, 1px) rotate(-1deg); }
+                80% { transform: translate(-1px, -1px) rotate(1deg); }
+                90% { transform: translate(1px, 2px) rotate(0deg); }
+                100% { transform: translate(1px, -2px) rotate(-1deg); }
+            }
+            
+        </style>
+    
+        <script>
+            
+            function cal_bmi(){
+                
+                check(); // 檢查 cm 是否能轉換浮點數   
+                
+                var cm = parseFloat(document.getElementById("cm").value);
+                var kg = parseFloat(document.getElementById("kg").value);               
+                document.getElementById('bmi').value = (kg/((cm/100)*(cm/100))).toFixed(2);
+            }
+            
+            function check() {
+                var cm = document.getElementById("cm");
+                var kg = document.getElementById("kg");
+                var err = document.getElementById("check_err");
+                var cm_float = parseFloat(cm.value); // 字串轉浮點數
+                var kg_float = parseFloat(kg.value);
+                if (isNaN(cm_float && kg_float)){
+                    check_err.innerHTML = '身高或體重 格式輸入錯誤';
+                    shake_err_add();
+                } else {
+                    check_err.innerHTML = "";
+                }                
+            }
+            
+            function shake_err_remove() {
+                cm.classList.remove('shake_err'); // 動態移除 class 樣式
+                kg.classList.remove('shake_err');
+            }
+            
+            function shake_err_add() {
+                var cm = document.getElementById("cm");
+                var kg = document.getElementById("kg");
+                cm.classList.add('shake_err');     // 動態加入 class 樣式
+                kg.classList.add('shake_err');
+                setTimeout(shake_err_remove, 500); //  設定 500 毫秒後執行 cm_shake_remove()
+            }                 
+            
+        </script>        
+       
+        
+    </head>
+    <body>
+        <p>
+        <img class="type" src="../images/002.jpg" alt=""/>
+        <img class="type" src="../images/003.jpg" alt=""/>  
+        </p>
+        <div>
+             <a href="../JavaScript/我的首頁.html">回首頁</a>
+        </div>
+        
+        <h4 class="db">B M I 計 算 機</h4>
+                
+       
+        <div class ="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4">        
+        <h4 class="md">&thinsp; BMI值計算公式: &nbsp; BMI = 體重(公斤) / 身高2(公尺2)</h3>    
+        <h4 class="md">例如：一個52公斤的人，身高是155公分，則BMI為 :</h3>
+        <h3 class="md2 blue">&nbsp; 52(公斤)/1.552 ( 公尺2 )= 21.6</h4>
+        <h3 class="md2 red">體重正常範圍為  BMI=18.5～24</h4>
+        <div class="dt orange"></div>                
+        
+        <h4 class="md2 purple">快看看自己的BMI是否在理想範圍吧!</h4>
+        
+        <h4 class="md2 script">身　高: <input id="cm" type="text" required placeholder="請輸入身高" style="width:100px;" > cm &ensp; 
+            <span id="check_err" class="check_err"></span>
+        </h4>
+        
+        
+        <h4 class="md2 script">體　重: <input id="kg" type="text" required placeholder="請輸入體重" style="width:100px;"> kg &thinsp; &thinsp;
+        <button onclick="cal_bmi()">開始計算</button>
+        </h4>
+            
+        <p><h4 class="md3"> 你的BMI為 ： 
+        <output id="bmi"></output></h4> 
+
+        <table border="3" class="md4">         
+                <tr style ="background-color: orange">
+                    <th></th>
+                    <th>身體質量指數(BMI)</br>(kg/m2)</th>
+                    <th>腰圍</br>(cm)</th>
+                </tr>               
+                <tr>
+                    <td style="background-color: cyan">體重過輕</td>
+                    <td>BMI ＜ 18.5</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td style="background-color: cyan">正常範圍</td>
+                    <td>18.5 ≦ BMI ＜ 24</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td style="background-color: cyan">異常範圍</td>
+                    <td>過重：24 ≦ BMI ＜ 27</br>
+                        輕度肥胖：27 ≦ BMI ＜ 30</br>
+                        中度肥胖：30 ≦ BMI ＜ 35</br>
+                        重度肥胖：BMI ≧ 35
+                    </td>
+                    <td>男性：≧ 90公分</br>
+                        女性：≧ 80公分
+                    </td>
+                </tr>
+
+        </table>
+        
+        
+    </body>
+</html>
